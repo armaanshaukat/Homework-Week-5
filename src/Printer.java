@@ -81,8 +81,9 @@ public class Printer {
 	
 	public String toString() {
 		StringBuffer result = new StringBuffer();
-		
-		
+		result.append("Welcome to Chicago Public Library's Printer\n");
+		result.append("Sheets of paper currently loaded into the printer's tray: " + paper);
+		result.append("\nPrinter's current state: " + state + "\n");
 		return result.toString();
 	}
 }

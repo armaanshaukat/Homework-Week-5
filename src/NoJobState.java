@@ -28,6 +28,6 @@ public class NoJobState implements State {
 	public void addPaper() { }
 	
 	public String toString() {
-		return "Printer is recieve a job request";
+		return "Printer is ready recieve a job request";
 	}
 }
