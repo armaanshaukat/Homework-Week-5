@@ -5,6 +5,7 @@ public class Printer {
 	State noPaperState;
 	State noJobState;
 	State startJobState;
+	State winnerState;
 	
 	State state;
 	int paper = 0;
@@ -14,6 +15,7 @@ public class Printer {
 		noJobState = new NoJobState(this);
 		startJobState = new StartJobState(this);
 		noPaperState = new NoPaperState(this);
+		winnerState = new WinnerState(this);
 		
 		this.paper = currentPaper;
 		
@@ -77,6 +79,10 @@ public class Printer {
 	
 	public State getNoPaperState() {
 		return noPaperState;
+	}
+	
+	public State getWinnerState() {
+		return winnerState;
 	}
 	
 	public String toString() {

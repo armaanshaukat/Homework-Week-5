@@ -1,6 +1,7 @@
+import java.util.Random;
 
 public class StartJobState implements State {
-
+	Random randomWinner = new Random();
 	Printer printer;
 	
 	public StartJobState(Printer printer) {
@@ -19,6 +20,15 @@ public class StartJobState implements State {
 	public void printing() {
 		System.out.println("Printing the job has started");
 		printer.setState(printer.getCurrentlyPrintingState());
+		
+		int winner = randomWinner.nextInt(10);
+		int luckyNumber = 5;
+		
+		if ((winner == luckyNumber) && (printer.getPaper() > 1)) {
+			printer.setState(printer.getWinnerState());
+		} else {
+			printer.setState(printer.getNoPaperState());
+		}
 	}
 
 	public void getPrintOut() {
